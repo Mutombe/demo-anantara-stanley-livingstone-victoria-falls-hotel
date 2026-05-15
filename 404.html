@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Anantara Stanley & Livingstone Victoria Falls Hotel</title>
+    <script>
+      // SPA deep-route fix — stash the requested path, then bounce to root.
+      // main.jsx reads this key on boot and rehydrates the router via history.replaceState.
+      (function () {
+        try {
+          sessionStorage.setItem(
+            'anantara-sl:spa-redirect',
+            window.location.pathname + window.location.search + window.location.hash
+          );
+        } catch (e) {}
+        window.location.replace('/');
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
